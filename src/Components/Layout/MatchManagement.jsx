@@ -119,16 +119,16 @@ const MatchManagement = () => {
     });
 
     return (
-        <div className="min-h-screen text-zinc-300 font-sans bg-[#050505]">
+        <div className="min-h-screen text-zinc-300 ">
             <div className="max-w-[1500px] mx-auto p-4 md:p-10">
                 
                 <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
                     <div>
-                        <h1 className="text-4xl font-black italic text-white tracking-tighter">
-                            ARENA<span className="text-emerald-500">CONTROL</span> <span className="text-zinc-800 text-2xl">v2.5</span>
+                        <h1 className="text-4xl font-black italic text-black dark:text-white tracking-tighter">
+                            Match<span className="text-emerald-500">Fixtures</span>
                         </h1>
                         <p className="text-zinc-600 text-[9px] uppercase font-bold tracking-[0.4em] mt-2 flex items-center gap-2">
-                           <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Logic: Live Match Engine
+                           <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Add Match Fixtures
                         </p>
                     </div>
                     
@@ -143,46 +143,46 @@ const MatchManagement = () => {
                     
                     {/* --- SIDEBAR FORM --- */}
                     <div className="lg:col-span-4 xl:col-span-3">
-                        <div className="sticky top-10 bg-zinc-900/40 p-6 rounded-[2.5rem] border border-white/5 backdrop-blur-3xl shadow-2xl">
-                            <h2 className="text-[10px] font-black mb-8 uppercase flex items-center gap-3 text-emerald-500 tracking-widest">
+                        <div className="sticky top-10 p-6 rounded-[2.5rem] border border-current">
+                            <h2 className="text-[10px] font-black mb-8 uppercase flex items-center gap-3 text-emerald-600 tracking-widest">
                                 <FiSettings className="animate-spin-slow"/> {editMatch ? 'Modify Match' : 'New Schedule'}
                             </h2>
 
                             <div className="space-y-4">
-                                <input type="text" placeholder="League Name" className="w-full bg-black/50 border border-white/5 p-4 rounded-2xl text-[11px] text-white outline-none focus:border-emerald-500" 
+                                <input type="text" placeholder="League Name" className="w-full text-black dark:text-white bg-transparent border border-current p-4 rounded-2xl text-[11px] outline-none focus:border-emerald-500 transition-all" 
                                     value={editMatch ? editMatch.leagueName : formData.leagueName} 
                                     onChange={(e) => editMatch ? setEditMatch({...editMatch, leagueName: e.target.value}) : setFormData({...formData, leagueName: e.target.value})} />
                                 
-                                <input type="text" placeholder="Venue" className="w-full bg-black/50 border border-white/5 p-4 rounded-2xl text-[11px] text-white outline-none focus:border-emerald-500" 
+                                <input type="text" placeholder="Venue" className="w-full text-black dark:text-white bg-transparent border border-current p-4 rounded-2xl text-[11px] outline-none focus:border-emerald-500 transition-all" 
                                     value={editMatch ? editMatch.venue : formData.venue} 
                                     onChange={(e) => editMatch ? setEditMatch({...editMatch, venue: e.target.value}) : setFormData({...formData, venue: e.target.value})} />
                                 
                                 <div className="relative group">
                                     <FiCalendar className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 group-focus-within:text-emerald-500" size={14}/>
-                                    <input type="datetime-local" className="w-full bg-black/50 border border-white/5 p-4 pl-12 rounded-2xl text-[11px] text-white outline-none focus:border-emerald-500" 
+                                    <input type="datetime-local" className="w-full text-black dark:text-white bg-transparent border border-current p-4 pl-12 rounded-2xl text-[11px] outline-none focus:border-emerald-500" 
                                         value={editMatch ? editMatch.startTime : formData.startTime} 
                                         onChange={(e) => editMatch ? setEditMatch({...editMatch, startTime: e.target.value}) : setFormData({...formData, startTime: e.target.value})} />
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4">
-                                    <input type="text" placeholder="Team 1" className="w-full bg-black/50 border border-white/5 p-4 rounded-2xl text-[11px] text-white outline-none focus:border-emerald-500" 
+                                    <input type="text" placeholder="Team 1" className="w-full text-black dark:text-white bg-transparent border border-current p-4 rounded-2xl text-[11px] outline-none focus:border-emerald-500 transition-all" 
                                         value={editMatch ? editMatch.team1Name : formData.team1Name} 
                                         onChange={(e) => editMatch ? setEditMatch({...editMatch, team1Name: e.target.value}) : setFormData({...formData, team1Name: e.target.value})} />
-                                    <input type="text" placeholder="Team 2" className="w-full bg-black/50 border border-white/5 p-4 rounded-2xl text-[11px] text-white outline-none focus:border-emerald-500" 
+                                    <input type="text" placeholder="Team 2" className="w-full text-black dark:text-white bg-transparent border border-current p-4 rounded-2xl text-[11px] outline-none focus:border-emerald-500 transition-all" 
                                         value={editMatch ? editMatch.team2Name : formData.team2Name} 
                                         onChange={(e) => editMatch ? setEditMatch({...editMatch, team2Name: e.target.value}) : setFormData({...formData, team2Name: e.target.value})} />
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-3">
                                     <label className="p-3 bg-emerald-500/5 rounded-2xl border border-emerald-500/10 text-center cursor-pointer">
-                                        <div className="w-full aspect-square bg-black/60 rounded-xl border border-dashed border-white/10 flex items-center justify-center overflow-hidden mb-2">
+                                        <div className="w-full aspect-square  rounded-xl border border-dashed border-white/10 flex items-center justify-center overflow-hidden mb-2">
                                             { (editMatch?.team1Logo || formData.team1Logo) ? <img src={editMatch ? editMatch.team1Logo : formData.team1Logo} className="w-full h-full object-contain p-2" /> : <FiImage className="text-zinc-700" size={20}/> }
                                         </div>
                                         <p className="text-[7px] font-black text-emerald-500 uppercase">Home Logo</p>
                                         <input type="file" className="hidden" onChange={(e) => handleImageUpload(e.target.files[0], 1)} />
                                     </label>
                                     <label className="p-3 bg-rose-500/5 rounded-2xl border border-rose-500/10 text-center cursor-pointer">
-                                        <div className="w-full aspect-square bg-black/60 rounded-xl border border-dashed border-white/10 flex items-center justify-center overflow-hidden mb-2">
+                                        <div className="w-full aspect-square rounded-xl border border-dashed border-white/10 flex items-center justify-center overflow-hidden mb-2">
                                             { (editMatch?.team2Logo || formData.team2Logo) ? <img src={editMatch ? editMatch.team2Logo : formData.team2Logo} className="w-full h-full object-contain p-2" /> : <FiImage className="text-zinc-700" size={20}/> }
                                         </div>
                                         <p className="text-[7px] font-black text-rose-500 uppercase">Away Logo</p>
@@ -192,7 +192,7 @@ const MatchManagement = () => {
 
                                 <button onClick={() => editMatch ? handleUpdate(editMatch._id, editMatch).then(() => setEditMatch(null)) : handleAddMatch()} disabled={loading}
                                     className="w-full bg-emerald-600 hover:bg-emerald-500 text-white p-5 rounded-2xl font-black uppercase text-[10px] tracking-widest transition-all shadow-xl shadow-emerald-900/20">
-                                    {loading ? 'SYNCING...' : editMatch ? 'Update Match' : 'Deploy Schedule'}
+                                    {loading ? 'SYNCING...' : editMatch ? 'Update Match' : 'OK Done'}
                                 </button>
                                 {editMatch && <button onClick={() => setEditMatch(null)} className="w-full text-[9px] font-bold text-zinc-600 uppercase hover:text-white">Cancel Edit</button>}
                             </div>
@@ -209,7 +209,7 @@ const MatchManagement = () => {
                         )}
                         
                         {filteredMatches.map(match => (
-                            <div key={match._id} className="relative bg-zinc-900/30 border border-white/5 p-6 md:p-10 rounded-[3.5rem] shadow-2xl group transition-all hover:bg-zinc-900/50 overflow-hidden">
+                            <div key={match._id} className="relative bg-zinc-900/30 border border-white/5 p-6 md:p-10 rounded-[3.5rem] shadow-2xl group transition-all overflow-hidden">
                                 
                                 <div className="flex flex-col xl:flex-row items-center gap-10">
                                     
