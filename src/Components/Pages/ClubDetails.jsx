@@ -36,7 +36,7 @@ const ClubDetails = () => {
     if (!club) return <div className="min-h-screen bg-black text-white flex items-center justify-center">Record Not Found</div>;
 
     return (
-        <div className="min-h-screen bg-[#fafafa] dark:bg-[#080808] text-slate-900 dark:text-white transition-colors duration-500 overflow-x-hidden">
+        <div className="min-h-screen  text-slate-900 dark:text-white transition-colors duration-500 overflow-x-hidden">
             
             {/* Full Screen Stadium Hero */}
             <div className="relative h-[65vh] lg:h-[75vh] md:h-[600px] w-full overflow-hidden bg-black">
@@ -45,7 +45,7 @@ const ClubDetails = () => {
                     animate={{ scale: 1 }}
                     transition={{ duration: 1.5 }}
                     src={club.stadiumImageUrl} 
-                    className="w-full h-full object-cover object-center brightness-110 contrast-105"
+                    className="w-full h-full object-cover object-center"
                     alt="Stadium View"
                 />
                 {/* Gradient overlay for better text visibility */}
