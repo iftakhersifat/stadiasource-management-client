@@ -28,6 +28,7 @@ import ManagerDetails from './Components/Pages/ManagerDetails.jsx';
 import Manager from './Components/Page/Manager.jsx';
 import PlayerManagement from './Components/Layout/PlayerManagement.jsx';
 import BannerManagement from './Components/Layout/BannerManagement.jsx';
+import AddClubHistory from './Components/Layout/AddClubHistory.jsx';
 
 
 
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
       { path: 'add-manager', element: <ManagerRegistration /> },
       { path: 'team-set', element: <PlayerManagement /> },
       { path: 'banner', element: <BannerManagement /> },
+      { path: 'add-club', element: <AddClubHistory /> },
     ],
   },
 
@@ -74,6 +76,7 @@ const router = createBrowserRouter([
       { path: 'add-manager', element: <ManagerRegistration /> },
       { path: 'team-set', element: <PlayerManagement /> },
       { path: 'banner', element: <BannerManagement /> },
+      { path: 'add-club', element: <AddClubHistory /> },
     ],
   },
 ]);

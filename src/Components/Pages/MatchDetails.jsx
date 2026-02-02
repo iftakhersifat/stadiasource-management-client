@@ -69,7 +69,7 @@ const MatchDetails = () => {
     );
 
     return (
-        <div className="min-h-screen pb-24 font-sans selection:bg-emerald-500 selection:text-white overflow-x-hidden">
+        <div className="min-h-screen pb-24 font-sans py-24 selection:bg-emerald-500 selection:text-white overflow-x-hidden">
             <nav className="max-w-7xl mx-auto px-6 py-10 flex justify-between items-center relative z-20">
                 <motion.button whileHover={{ x: -4 }} onClick={() => navigate(-1)} className="p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/5 rounded-2xl text-zinc-900 dark:text-white shadow-sm">
                     <FiArrowLeft className="text-xl" />
