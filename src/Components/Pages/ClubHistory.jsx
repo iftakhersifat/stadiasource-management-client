@@ -14,7 +14,7 @@ const ClubHistory = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-500">
+        <div className="min-h-screen   text-slate-900 dark:text-white transition-colors duration-500">
             <div className="max-w-7xl mx-auto px-6 py-20">
                 
                 {/* Header Section */}
